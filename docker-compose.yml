@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    networks:
+      - app_network
+    volumes:
+      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+
+  web:
+    build: .
+    command: ["sh", "-c", "until nc -z -v -w30 db 5432; do echo 'Waiting for database...'; sleep 2; done; python manage.py runserver 0.0.0.0:8000"]
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      DB_HOST: db
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+    depends_on:
+      - db
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge

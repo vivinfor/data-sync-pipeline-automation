@@ -1,0 +1,71 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+*.egg
+*.egg-info
+dist/
+build/
+*.bak
+*.swp
+
+# Django
+*.log
+*.pot
+*.py[cod]
+db.sqlite3
+/static/
+media/
+
+# Virtualenv
+venv/
+ENV/
+env/
+.venv/
+.ENV/
+*.env
+
+# Docker
+docker-compose.override.yml
+Dockerfile.dev
+.dockerignore
+
+# IDEs e editores
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# PyCharm
+.idea/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Local environment files
+.env
+
+# SH
+init-db.sh
+
+# SQL
+backup.sql
+
+# Folders
+/fictitious_repo/
+/myfiles/
+/data/
+/tests/

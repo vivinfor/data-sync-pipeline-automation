@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dashboard{% endblock %}</title>
+
+    <!-- Font Awesome CDN (para ícones) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Flowbite CSS (para componentes interativos como collapse) -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@1.5.3/dist/flowbite.min.css" rel="stylesheet">
+
+    <!-- Tailwind CSS (arquivo gerado localmente) -->
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex flex-col min-h-screen overflow-hidden m-0">
+
+    <!-- Header -->
+    {% include 'components/_header.html' %}
+    
+    <!-- Main container with flexible layout -->
+    <div class="flex flex-1 overflow-hidden">
+        <!-- Sidebar with responsive width -->
+        {% if show_sidebar %}
+            <div class="w-64 bg-gray-800 text-white shadow-md overflow-y-auto flex-none">
+                {% include 'components/_sidebar.html' %}
+            </div>
+        {% endif %}
+        
+        <!-- Main content area takes the rest of the space -->
+        <div class="flex-1 p-6 bg-white overflow-hidden">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    {% include 'components/_footer.html' %}
+
+</body>
+</html>

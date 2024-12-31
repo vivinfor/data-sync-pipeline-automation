@@ -1,0 +1,41 @@
+<aside class="w-64 bg-gray-800 text-white shadow-md flex-none h-screen">
+    <div class="flex-1 overflow-auto px-4"> <!-- Permitir rolagem apenas no conteúdo interno -->
+        <ul class="space-y-4 mt-4">
+            {% for link in sidebar_links %}
+                <li class="nav-item {% if link.active %}bg-blue-600{% endif %}">
+                    {% if link.subitems %}
+                        <a href="javascript:void(0);" 
+                           class="nav-link flex items-center justify-between p-2 rounded-md hover:bg-blue-600" 
+                           onclick="toggleSubmenu('submenu-{{ forloop.counter }}')">
+                            <i class="fas fa-{{ link.icon }} mr-2"></i>
+                            <span>{{ link.label }}</span>
+                            <i class="fas fa-chevron-down ml-auto"></i>
+                        </a>
+                        <ul id="submenu-{{ forloop.counter }}" class="hidden space-y-2 pl-4">
+                            {% for subitem in link.subitems %}
+                                <li><a href="{{ subitem.url }}" class="p-2 pl-6 text-gray-300 hover:bg-blue-600">
+                                    <i class="fas fa-chevron-right mr-2"></i>
+                                    {{ subitem.label }}
+                                </a></li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <a href="{{ link.url }}" class="flex items-center p-2 rounded-md hover:bg-blue-600">
+                            <i class="fas fa-{{ link.icon }} mr-2"></i>
+                            <span>{{ link.label }}</span>
+                        </a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</aside>
+
+
+
+<script>
+    function toggleSubmenu(id) {
+        const submenu = document.getElementById(id);
+        submenu.classList.toggle('hidden');
+    }
+</script>

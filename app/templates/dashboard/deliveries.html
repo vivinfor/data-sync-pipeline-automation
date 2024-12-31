@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard de Deliveries{% endblock %}
+
+{% block content %}
+<div class="container mx-auto mt-4 px-4">
+    <h1 class="text-3xl font-bold mb-6">Deliveries Dashboard</h1>
+    
+    <!-- Cards de Métricas -->
+    <div class="mb-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Backlog Total -->
+        <div class="bg-sky-100 text-sky-800 rounded-lg shadow-md p-6 flex items-center">
+            <div class="flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-sky-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7v14" />
+                </svg>
+            </div>
+            <div class="ml-4">
+                <p class="text-sm font-semibold">Backlog Total</p>
+                <p class="text-lg font-semibold">User Stories: <span class="text-2xl">{{ backlog_user_story }}</span></p>
+                <p class="text-lg font-semibold">Incidents: <span class="text-2xl">{{ backlog_incident }}</span></p>
+            </div>
+        </div>
+        
+        <!-- Proporção de Retrabalho -->
+        <div class="bg-orange-100 text-orange-800 rounded-lg shadow-md p-6 flex items-center">
+            <div class="flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-orange-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-6-8.28" />
+                </svg>
+            </div>
+            <div class="ml-4">
+                <p class="text-sm font-semibold">Proporção de Retrabalho</p>
+                <p class="text-lg font-semibold"><span class="text-2xl">{{ rework_percentage|floatformat:2 }}</span>%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gráficos -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Gráfico: Total de Entregas Mensalmente (User Story) -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <!-- Gráfico Plotly -->
+            {{ user_story_plot|safe }}
+        </div>
+
+        <!-- Gráfico: Total de Incidentes Resolvidos (Incident) -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <!-- Gráfico Plotly -->
+            {{ incident_plot|safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}
