@@ -23,4 +23,5 @@ Please adhere to the project's [Code of Conduct](CODE_OF_CONDUCT.md) in all inte
 ### Setting Up the Environment
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/azure-devops-data-suite.git
+   git clone https://github.com/vivinfor/delivertrack.git
+
