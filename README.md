@@ -1,4 +1,4 @@
-# **DeliverTrack**
+# **DataSyncHub**
 
 ![Dashboard Overview](assets/dashboard_graphs_01.png)
 
@@ -7,12 +7,12 @@
 ## **Overview**
 
 ### English
-**DeliverTrack** is a cutting-edge solution for building, managing, and visualizing data pipelines. Tailored for modern business demands and technical leaders like CTOs and directors, it leverages technologies such as **Django** and **Plotly** to create a robust system capable of processing, transforming, and analyzing large data volumes with ease.
+**DataSyncHub** is a cutting-edge solution for building, managing, and visualizing data pipelines. Tailored for modern business demands and technical leaders like CTOs and directors, it leverages technologies such as **Django** and **Plotly** to create a robust system capable of processing, transforming, and analyzing large data volumes with ease.
 
 A standout feature of this project is its complete **ETL (Extract, Transform, Load)** pipeline, powered by **PostgreSQL**, **Pandas**, and **Requests**. This system extracts data directly from the **Azure DevOps API**, performs advanced transformations, and loads structured data into a centralized database. It also includes dynamic dashboards built with **Plotly**, offering interactive insights and detailed analytics. Best practices in modularity, security, and code organization ensure a scalable and reliable platform.
 
 ### Portuguese
-O **DeliverTrack** é uma solução de ponta para construção, gerenciamento e visualização de pipelines de dados. Projetado para atender às demandas de negócios modernos e líderes técnicos como CTOs e diretores, integra tecnologias como **Django** e **Plotly** para criar um sistema robusto, capaz de processar, transformar e analisar grandes volumes de dados com eficiência.
+O **DataSyncHub** é uma solução de ponta para construção, gerenciamento e visualização de pipelines de dados. Projetado para atender às demandas de negócios modernos e líderes técnicos como CTOs e diretores, integra tecnologias como **Django** e **Plotly** para criar um sistema robusto, capaz de processar, transformar e analisar grandes volumes de dados com eficiência.
 
 Um dos principais diferenciais é a implementação de um pipeline completo de **ETL (Extract, Transform, Load)**, utilizando **PostgreSQL**, **Pandas** e **Requests**. O sistema extrai dados diretamente da **API do Azure DevOps**, realiza transformações complexas e carrega os dados estruturados em um banco centralizado. Também inclui dashboards dinâmicos construídos com **Plotly**, proporcionando insights interativos e análises detalhadas. Boas práticas de modularidade, segurança e organização de código garantem uma plataforma escalável e confiável.
 
@@ -100,7 +100,7 @@ O projeto utiliza uma arquitetura escalável que integra diversas tecnologias pa
    ```
 3. Execute o container Docker:
    ```bash
-   docker run -p 8000:8000 delivertrack
+   docker run -p 8000:8000 datasynchub
    ```
 4. Acesse a aplicação em: [http://localhost:8000](http://localhost:8000)
 
