@@ -1,6 +1,6 @@
-# DataSyncHub
+# DataSync & Pipeline Automation
 
-**DataSyncHub** is a cutting-edge solution for building, managing, and visualizing data pipelines. Tailored for modern business demands and technical leaders like CTOs and directors, it leverages technologies such as **Django** and **Plotly** to create a robust system capable of processing, transforming, and analyzing large data volumes with ease.
+**DataSync & Pipeline Automation** is a cutting-edge solution for building, managing, and visualizing data pipelines. Tailored for modern business demands and technical leaders like CTOs and directors, it leverages technologies such as **Django** and **Plotly** to create a robust system capable of processing, transforming, and analyzing large data volumes with ease.
 
 A standout feature of this project is its complete **ETL (Extract, Transform, Load)** pipeline, powered by **PostgreSQL**, **Pandas**, and **Requests**. This system extracts data directly from the **Azure DevOps API**, performs advanced transformations, and loads structured data into a centralized database. It also includes dynamic dashboards built with **Plotly**, offering interactive insights and detailed analytics. Best practices in modularity, security, and code organization ensure a scalable and reliable platform.
 
@@ -33,4 +33,5 @@ The project employs a scalable architecture that integrates multiple technologie
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/vivinfor/DataSyncHub.git
+   git clone https://github.com/vivinfor/data-sync-pipeline-automation.git
+
